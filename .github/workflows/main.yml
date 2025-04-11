@@ -52,7 +52,7 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-      
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
@@ -62,4 +62,9 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
 
       - name: Install Ghost
-        run: npm install ghost-cli@latest -g && ghost install
+        run: |
+          pwd
+          cd /home/site/wwwroot
+          ls
+          npm install ghost-cli@latest -g
+          ghost install
