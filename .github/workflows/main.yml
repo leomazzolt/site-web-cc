@@ -19,13 +19,15 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Node.js version
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '22.x'
 
-      - name: Install dependencies
-        run: |
-          npm install --legacy-peer-deps
+      - name: Install npm v8 # downgrade from v10 to v8 due to https://github.com/npm/cli/issues/6738
+        run: npm install -g npm@8
+
+      - name: Install Ghost-CLI
+        run: npm install -g ghost-cli@latest
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
