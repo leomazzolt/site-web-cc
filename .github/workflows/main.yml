@@ -46,6 +46,11 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
@@ -58,7 +63,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'ghost-blog'
+          app-name: 'site-web-cc'
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
