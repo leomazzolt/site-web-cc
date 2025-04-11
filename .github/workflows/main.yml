@@ -67,4 +67,4 @@ jobs:
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
       - name: Install Ghost
-        run: ghost install local
+        run: npm ghost install

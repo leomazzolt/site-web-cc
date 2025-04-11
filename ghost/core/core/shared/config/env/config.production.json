@@ -2,9 +2,9 @@
     "database": {
         "client": "mysql",
         "connection": {
-            "host"     : "127.0.0.1",
-            "user"     : "root",
-            "password" : "",
+            "host"     : "site-web-cc.mysql.database.azure.com",
+            "user"     : "siteadmin",
+            "password" : "asdasd0khaKKK2",
             "database" : "ghost"
         }
     },
