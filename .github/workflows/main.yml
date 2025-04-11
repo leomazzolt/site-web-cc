@@ -64,7 +64,6 @@ jobs:
       - name: Install Ghost
         run: |
           pwd
-          cd /home/site/wwwroot
           ls
           npm install ghost-cli@latest -g
           ghost install local
