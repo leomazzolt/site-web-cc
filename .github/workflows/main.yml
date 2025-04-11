@@ -66,3 +66,5 @@ jobs:
           app-name: 'site-web-cc'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+      - name: Install Ghost
+        run: ghost install local
