@@ -64,6 +64,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'site-web-cc'
-          slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
