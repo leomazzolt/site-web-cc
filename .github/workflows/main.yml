@@ -67,4 +67,4 @@ jobs:
           cd /home/site/wwwroot
           ls
           npm install ghost-cli@latest -g
-          ghost install
+          ghost install local
